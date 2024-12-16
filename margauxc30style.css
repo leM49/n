@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fefefe;
+    color: #333;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #ff69b4;
+    margin: 20px 0;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    max-width: 90%;
+    width: 100%;
+}
+
+.case {
+    background-color: #ff69b4;
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+.case:hover {
+    background-color: #ff85c1;
+}
+
+.case .quality-text {
+    display: none;
+    background-color: white;
+    color: #ff69b4;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #ff69b4;
+    text-align: center;
+    width: 80%;
+    position: absolute;
+}
+
+.case .cover {
+    font-size: 2rem;
+    color: white;
+    z-index: 1;
+    transition: transform 0.5s ease-in-out;
+}
+
+.case.show-text .cover {
+    transform: translateY(-100px); /* "Le couvercle" disparaît en montant */
+}
+
+.case.show-text .quality-text {
+    display: block;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: 2rem;
+    display: none;
+}
+
+.popup.show {
+    display: block;
+}
